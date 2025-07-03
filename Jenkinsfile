@@ -3,7 +3,6 @@ pipeline {
     tools {
         jdk 'JDK17'
         maven 'MAVEN3.9'
-        sonar 'sonarscanner'
     }
     environment {
         SNAP_REPO = 'vprofile-snapshot'
@@ -44,7 +43,7 @@ pipeline {
         }
         stage('Sonar Analysis') {
             environment {
-                scannerHome = tool "${SONARSCANER}"
+                scannerHome = tool "${SONARSCANNER}"
             }
             steps {
                 withSonarQubeEnv("${SONARSERVER}") {
