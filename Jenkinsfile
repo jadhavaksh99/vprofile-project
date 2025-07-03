@@ -1,8 +1,9 @@
 pipeline {
     agent any
     tools {
-        jdk 'OracleJDK8'
-        maven 'MAVEN3'
+        jdk 'JDK17'
+        maven 'MAVEN3.9'
+        sonar 'sonarscanner'
     }
     environment {
         SNAP_REPO = 'vprofile-snapshot'
